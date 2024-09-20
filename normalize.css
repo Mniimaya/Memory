@@ -67,6 +67,10 @@ button::-moz-focus-inner {
   border: 0;
 }
 
+a {
+  display: block;
+}
+
 a,
 a:visited {
   text-decoration: none;
