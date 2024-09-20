@@ -1,0 +1,381 @@
+@font-face {
+  font-family: "Geologica";
+  src: url("../assets/fonts/Geologica-Thin.woff2") format("woff2");
+  font-weight: 1;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets//assets/fonts/GeologicaRoman-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Geologica";
+  src: url("./assets/fonts/GeologicaRoman-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Angst";
+  src: url("./assets/fonts/Angst-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+:root {
+  --color-white: rgba(255, 253, 247, 0.5);
+  --color-blue: rgba(40, 59, 108, 1);
+  --color-black: rgba(62, 62, 62, 1);
+  --color-hover: rgba(104, 131, 199, 1);
+  --anim: all 0.5s ease;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: Angst, sans-serif;
+}
+
+body {
+  font-family: Geologica, sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-weight: 400;
+}
+
+.container {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.header__container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo svg path {
+  fill: var(--color-blue);
+  transition: var(--anim);
+}
+
+.header__logo:hover svg path,
+.footer__logo:hover svg path {
+  fill: var(--color-hover);
+  transition: var(--anim);
+}
+
+.header__logo:hover svg rect:not(.svg-bg),
+.footer__logo:hover svg rect:not(.svg-bg) {
+  fill: var(--color-hover);
+  transition: var(--anim);
+}
+
+.header__logo:hover svg .svg-bg,
+.footer__logo:hover svg .svg-bg {
+  stroke: var(--color-hover);
+  transition: var(--anim);
+}
+
+.footer__link:hover svg path {
+  fill: var(--color-hover);
+  transition: var(--anim);
+}
+
+.header__nav-list {
+  display: flex;
+  flex-direction: column;
+  display: none;
+}
+
+.header__nav-list a {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  padding: 0 5px;
+  color: var(--color-blue);
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--color-blue);
+}
+
+.intro {
+  background-image: url("./assets/img/intro.png");
+  background-color: #dfe1e1;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 710px;
+}
+
+.intro__title {
+  max-width: 436px;
+  margin-bottom: 20px;
+}
+
+.about__wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 60px;
+}
+
+.about {
+  padding: 100px 0;
+}
+
+.about__wrapper-text {
+  max-width: 660px;
+}
+
+@media (min-width: 600px) {
+  .header__nav-list {
+    flex-direction: row;
+    column-gap: 25px;
+    display: flex;
+  }
+
+  .intro {
+    padding-top: 235px;
+  }
+
+  .intro__text {
+    max-width: 436px;
+  }
+}
+
+.text {
+  font-family: Geologica;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.about-description {
+  background-image: url("./assets/img/bg-about-description.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about-description__wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 130px;
+}
+
+.about-description__wrapper-text {
+  max-width: 660px;
+}
+
+.reviews {
+  padding: 100px 0 0;
+}
+
+.reviews__title {
+  font-family: Angst;
+  font-size: 40px;
+  font-weight: 100;
+  line-height: 50px;
+  letter-spacing: 0.02em;
+  text-align: left;
+  color: var(--color-blue);
+  margin-bottom: 50px;
+}
+
+.reviews__list {
+  display: flex;
+  align-items: flex-start;
+  column-gap: 60px;
+}
+
+.reviews__list li {
+  max-width: 380px;
+  box-shadow: 0px 0px 34.7px 0px rgba(0, 0, 0, 0.1);
+  padding: 30px 30px 66px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviews__img {
+  width: 104px;
+  height: 104px;
+  position: relative;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.reviews__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.reviews__name {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 39.84px;
+  color: var(--color-blue);
+  margin-bottom: 15px;
+}
+
+.reviews__text {
+  font-family: Geologica;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 28px;
+  text-align: center;
+  color: var(--color-blue);
+}
+
+.review__container {
+  border-bottom: 1px dashed rgba(104, 131, 199, 1);
+  padding-bottom: 100px;
+}
+
+.order {
+  padding: 100px 0 190px;
+}
+
+.order__wrapper {
+  max-width: 640px;
+}
+
+.order__links {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 25px;
+}
+
+.oreder__flex {
+  display: flex;
+  align-items: center;
+  column-gap: 160px;
+}
+
+.order__link {
+  min-width: 215px;
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--color-blue);
+  border: 1px solid rgba(40, 59, 108, 1);
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+
+.footer {
+  background-color: var(--color-blue);
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  padding: 50px 0 35px;
+}
+
+.footer__logo {
+  margin-right: 84px;
+}
+
+.footer__social-list {
+  display: flex;
+  align-items: center;
+  column-gap: 40px;
+}
+
+.footer__copyright {
+  font-family: Geologica;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 30px;
+  letter-spacing: 0.02em;
+  text-align: right;
+  color: rgba(255, 253, 247, 1);
+  margin-left: auto;
+  align-self: flex-end;
+}
+
+a:hover {
+  color: var(--color-hover);
+  transition: var(--anim);
+}
