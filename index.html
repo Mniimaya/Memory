@@ -86,13 +86,16 @@
         <nav>
           <ul class="header__nav-list">
             <li>
-              <a href="">О нас</a>
+              <a class="haeder__navLink"
+                 href="#section1">О нас</a>
             </li>
             <li>
-              <a href="">Отзывы</a>
+              <a class="haeder__navLink"
+                 href="#section2">Отзывы</a>
             </li>
             <li>
-              <a href="">Заказать</a>
+              <a class="haeder__navLink"
+                 href="#section3">Заказать</a>
             </li>
           </ul>
         </nav>
@@ -117,7 +120,8 @@
         </div>
       </div>
     </section>
-    <section class="about">
+    <section class="about"
+             id="section1">
       <div class="container">
         <div class="about__wrapper">
           <img class="about__img"
@@ -149,7 +153,8 @@
         </div>
       </div>
     </section>
-    <section class="reviews">
+    <section class="reviews"
+             id="section2">
       <div class="container review__container">
         <h2 class="reviews__title">Отзывы</h2>
         <ul class="reviews__list">
@@ -191,7 +196,8 @@
         </ul>
       </div>
     </section>
-    <section class="order">
+    <section class="order"
+             id="section3">
       <div class="container">
         <div class="oreder__flex">
           <div class="order__wrapper">
@@ -366,5 +372,22 @@
     </div>
   </footer>
 </body>
+
+<script>
+  document.querySelectorAll('.anchor-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetID = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetID);
+
+      // Плавная прокрутка до элемента
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
 
 </html>
