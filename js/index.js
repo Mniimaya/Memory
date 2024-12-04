@@ -32,6 +32,11 @@ const swiper = new Swiper('.swiper', {
         1120: {
             slidesPerView: 3,
             spaceBetween: 40
-        }
+        },
+
+    },
+    navigation: {
+        nextEl: '.swiper-button-next', // Селектор для кнопки "вперед"
+        prevEl: '.swiper-button-prev'  // Селектор для кнопки "назад"
     }
 });
