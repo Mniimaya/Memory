@@ -6,9 +6,9 @@ function applyPhoneMask(inputElement) {
     inputElement.addEventListener('input', function () {
         let value = inputElement.value.replace(/\D/g, ""); // Убираем все символы, кроме цифр
 
-        // Если пользователь стер всё, обнуляем
-        if (value === "7") {
-            value = ""; // Стереть +7 при удалении
+        // Удаляем лишние начальные 7, если пользователь вводит их вручную
+        if (value.startsWith("7") && !value.startsWith("77")) {
+            value = value.substring(1);
         }
 
         // Форматируем номер телефона
@@ -26,6 +26,7 @@ function applyPhoneMask(inputElement) {
             formattedValue += " " + value.substring(8, 10);
         }
 
+        // Обновляем значение в поле
         inputElement.value = formattedValue;
 
         // Проверяем корректность номера
@@ -43,6 +44,7 @@ function applyPhoneMask(inputElement) {
         }
     });
 }
+
 
 
 const swiper = new Swiper('.swiper', {
