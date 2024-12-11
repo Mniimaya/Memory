@@ -4,33 +4,39 @@ const phoneInput = document.querySelector('#phone');
 // Маска инпута
 function applyPhoneMask(inputElement) {
     inputElement.addEventListener('input', function () {
-        let value = inputElement.value.replace(/\D/g, ""); // Убираем все символы, кроме цифр
+        // Убираем все символы, кроме цифр
+        let value = inputElement.value.replace(/\D/g, "");
 
-        // Удаляем лишние начальные 7, если пользователь вводит их вручную
-        if (value.startsWith("7") && !value.startsWith("77")) {
-            value = value.substring(1);
+        // Если пользователь вводит номер с нуля, подставляем "+7" только один раз
+        if (value === "") {
+            value = "";
+        } else if (!value.startsWith("7")) {
+            value = "7" + value;
         }
+
+        // Удаляем лишние начальные 7, если они дублируются
+        value = value.replace(/^77+/, "7");
 
         // Форматируем номер телефона
         let formattedValue = "+7";
-        if (value.length > 0) {
-            formattedValue += " (" + value.substring(0, 3);
+        if (value.length > 1) {
+            formattedValue += " (" + value.substring(1, 4);
         }
-        if (value.length >= 4) {
-            formattedValue += ") " + value.substring(3, 6);
+        if (value.length >= 5) {
+            formattedValue += ") " + value.substring(4, 7);
         }
-        if (value.length >= 7) {
-            formattedValue += " " + value.substring(6, 8);
+        if (value.length >= 8) {
+            formattedValue += " " + value.substring(7, 9);
         }
-        if (value.length >= 9) {
-            formattedValue += " " + value.substring(8, 10);
+        if (value.length >= 10) {
+            formattedValue += " " + value.substring(9, 11);
         }
 
         // Обновляем значение в поле
         inputElement.value = formattedValue;
 
         // Проверяем корректность номера
-        if (value.length === 10) {
+        if (value.length === 11) {
             inputElement.classList.remove('invalid');
         } else {
             inputElement.classList.add('invalid');
@@ -44,6 +50,7 @@ function applyPhoneMask(inputElement) {
         }
     });
 }
+
 
 
 
