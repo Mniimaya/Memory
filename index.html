@@ -439,22 +439,39 @@
                 <p class="form-callback__title">Если остались вопросы — оставьте свои контакты, мы вам перезвоним!</p>
                 <div class="form-callback__inner-wrapper">
                   <label>
-                    <span>Имя</span>
-                    <input type="text"
-                           name="name"
-                           class="input"
-                           placeholder="Введите"
-                           required="true" />
+                    <span>Связаться со мной по...</span>
+                    <div class="custom-select-wrapper">
+                      <select name="type"
+                              class="input custom-select"
+                              required="true">
+                        <option value="placeholder">Выберите</option>
+                        <option value="whatsapp">What’s app</option>
+                        <option value="tg">Telegram</option>
+                        <option value="tg">По телефону</option>
+                      </select>
+                    </div>
                   </label>
-                  <label>
-                    <span>Телефон</span>
-                    <input type="text"
-                           name="telephone"
-                           class="input"
-                           required="true"
-                           placeholder="+7 (___) ___ __ __"
-                           id="phone" />
-                  </label>
+                  <div class="form-callback__inner-flex">
+
+                    <label>
+                      <span>Имя</span>
+                      <input type="text"
+                             name="name"
+                             class="input"
+                             placeholder="Введите"
+                             required="true" />
+                    </label>
+                    <label>
+                      <span>Телефон</span>
+                      <input type="text"
+                             name="telephone"
+                             class="input"
+                             required="true"
+                             placeholder="+7 (___) ___ __ __"
+                             id="phone" />
+                    </label>
+                  </div>
+
                 </div>
                 <p class="form-callback__police">* Отправляя форму вы соглашаетесь с&#x202F;<a
                      href="/">политикой</a>&#x202F; чето

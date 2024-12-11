@@ -88,4 +88,10 @@ document.querySelector('.header__btn').addEventListener("click", (evt) => {
     header.classList.toggle("active")
 });
 
+document.querySelectorAll('.custom-select-wrapper').forEach(wrapper => {
+    const select = wrapper.querySelector('.custom-select');
+    select.addEventListener('focus', () => wrapper.classList.add('open'));
+    select.addEventListener('blur', () => wrapper.classList.remove('open'));
+});
+
 applyPhoneMask(phoneInput);
