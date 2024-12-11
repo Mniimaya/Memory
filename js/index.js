@@ -3,12 +3,12 @@ const phoneInput = document.querySelector('#phone');
 
 // Маска инпута
 function applyPhoneMask(inputElement) {
-    inputElement.addEventListener('input', function (e) {
+    inputElement.addEventListener('input', function () {
         let value = inputElement.value.replace(/\D/g, ""); // Убираем все символы, кроме цифр
 
-        // Добавляем префикс +7
-        if (value.startsWith("7")) {
-            value = value.substring(1);
+        // Если пользователь стер всё, обнуляем
+        if (value === "7") {
+            value = ""; // Стереть +7 при удалении
         }
 
         // Форматируем номер телефона
@@ -37,12 +37,13 @@ function applyPhoneMask(inputElement) {
     });
 
     inputElement.addEventListener('blur', function () {
-        if (inputElement.value === "+7 (") {
+        if (inputElement.value === "+7 (" || inputElement.value === "+7") {
             inputElement.value = ""; // Если пользователь не ввел номер, очищаем поле
             inputElement.classList.add('invalid'); // Добавляем класс invalid, если поле пустое
         }
     });
 }
+
 
 const swiper = new Swiper('.swiper', {
     slidesPerView: "auto",
